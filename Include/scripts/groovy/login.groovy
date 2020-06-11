@@ -44,10 +44,24 @@ import cucumber.api.java.en.When
 
 
 class login {
-	@When(" I click  login icon")
-	def  I_click_login_icon(){
-		WebUI.click(findTestObject('homepage/login_icon'))
+	@When ("I input (.*) in email field in login pop-up")
+	def i_input_email_field_in_login_pop_up(String email){
+		WebUI.waitForElementPresent(findTestObject("Object Repository/login_pop_up/input_email"), 15)
+		WebUI.setText(findTestObject('login_pop_up/input_email'), 'fifekawahid@gmail.com')
 	}
-	
-	
+
+	@And("I input (.*) in password field in login pop-up")
+	def i_input_password_field_in_login_pop_up(String password){
+		WebUI.setText(findTestObject("Object Repository/login_pop_up/input_password"),password)
+	}
+
+	@And("I click masuk button in login pop-up")
+	def i_click_masuk_button_in_login_pop_up(){
+		WebUI.click(findTestObject("Object Repository/login_pop_up/button_masuk"))
+	}
+
+	@And("I verify i have been logged in")
+	def i_verify_i_have_been_logged_in(){
+		WebUI.verifyElementPresent(findTestObject("Object Repository/homepage/user_menu_after_login"), 15)
+	}
 }
