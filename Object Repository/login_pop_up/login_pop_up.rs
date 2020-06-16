@@ -6,12 +6,11 @@
    <elementGuidId>240f00cc-28b7-499a-8bc1-778a97483963</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value>/html/body/div[3]/aside[2]/div[2]/div/div/div[1][count(. | //*[@class = 'block block-customer-login']) = count(//*[@class = 'block block-customer-login'])]</value>
+         <key>XPATH</key>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value></value>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;login-modal-title&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -21,13 +20,6 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html/body/div[3]/aside[2]/div[2]/div/div/div[1]</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>class</name>
-      <type>Main</type>
-      <value>block block-customer-login</value>
+      <value>//*[@id=&quot;login-modal-title&quot;]</value>
    </webElementProperties>
 </WebElementEntity>

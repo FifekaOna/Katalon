@@ -1,11 +1,9 @@
 #Author: Fifeka Onanda Wahid
-
 @tag
-Feature: Login 
+Feature: Login
 
   @tag1
   Scenario Outline: User succesfully login to their account
-  
     Given I go to Fabelio homepage
     When I click  login icon
     Then I verify login pop-up appears
@@ -13,8 +11,7 @@ Feature: Login
     And I input <password> in password field in login pop-up
     And I click masuk button in login pop-up
     Then I verify i have been logged in
-    
-    Examples:
-    |email                 |password|
-    |fifekawahid@gmail.com |12345678|
 
+    Examples: 
+      | email                 | password |
+      | fifekawahid@gmail.com | 12345678 |

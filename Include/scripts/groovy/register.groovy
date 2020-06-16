@@ -47,7 +47,7 @@ class register {
 
 	@When("I click  login icon")
 	def  i_click_login_icon(){
-		WebUI.click(findTestObject('homepage/login_icon'))
+		WebUI.click(findTestObject('Object Repository/homepage/icon_login'))
 	}
 
 	@Then("I verify login pop-up appears")

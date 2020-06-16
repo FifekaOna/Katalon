@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;navbar-container&quot;]/div/div[2]/div[2]/div</value>
+         <value>//*[@id=&quot;profile-menu&quot;]/div[3]/a[1]/li</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,6 +17,6 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;navbar-container&quot;]/div/div[2]/div[2]/div</value>
+      <value>//*[@id=&quot;profile-menu&quot;]/div[3]/a[1]/li</value>
    </webElementProperties>
 </WebElementEntity>
