@@ -16,7 +16,7 @@ Feature: Register
     And I input <confirm_password> in confirm password field in register page
     And I click term and condition in register page
     And I click register button in register page
-    Then I verify I already registered
+    Then I redirected to homepage
 
     Examples: 
       | nama_depan | nama_belakang | password|confirm_password|

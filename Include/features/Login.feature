@@ -10,7 +10,7 @@ Feature: Login
     When I input <email> in email field in login pop-up
     And I input <password> in password field in login pop-up
     And I click masuk button in login pop-up
-    Then I verify i have been logged in
+    Then I redirected to homepage
 
     Examples: 
       | email                 | password |

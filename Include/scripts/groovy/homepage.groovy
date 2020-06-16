@@ -48,18 +48,24 @@ class homepage {
 	def  i_click_login_icon(){
 		WebUI.click(findTestObject('Object Repository/homepage/icon_login'))
 	}
-	
+
 	@Then("I verify I already registered")
 	def i_verify_the_web_is_redirected_to_dashboard_saya_page(){
 		WebUI.waitForElementClickable(findTestObject('homepage/icon_login'), 15)
 		WebUI.click(findTestObject('homepage/icon_login'))
 		WebUI.verifyElementPresent(findTestObject("Object Repository/homepage/user_menu_after_login"), 15)
 	}
-	
+
 	@And("I verify i have been logged in")
 	def i_verify_i_have_been_logged_in(){
 		WebUI.waitForElementClickable(findTestObject('homepage/icon_login'), 15)
 		WebUI.click(findTestObject('homepage/icon_login'))
 		WebUI.verifyElementPresent(findTestObject("Object Repository/homepage/user_menu_after_login"), 15)
+	}
+	
+	@Then("I redirected to homepage")
+	def i_redirected_to_homepage(){
+		def url = WebUI.getUrl();
+		WebUI.verifyMatch(url, 'https://qa.fabelio.com/', false)
 	}
 }
