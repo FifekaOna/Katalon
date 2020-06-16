@@ -16,7 +16,7 @@ Feature: Register
     And I input <confirm_password> in confirm password field in register page
     And I click term and condition in register page
     And I click register button in register page
-    Then I verify the web is redirected to dashboard saya page
+    Then I verify I already registered
 
     Examples: 
       | nama_depan | nama_belakang | password|confirm_password|

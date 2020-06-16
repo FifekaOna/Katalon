@@ -45,24 +45,9 @@ import cucumber.api.java.en.When
 
 class register {
 
-	@When("I click  login icon")
-	def  i_click_login_icon(){
-		WebUI.click(findTestObject('Object Repository/homepage/icon_login'))
-	}
-
-	@Then("I verify login pop-up appears")
-	def i_verify_login_pop_up_appears(){
-		WebUI.verifyElementPresent(findTestObject('login_pop_up/login_pop_up'), 15)
-	}
-
-	@When("I click buat akun sekarang link")
-	def i_click_buat_akun_sekarang_link(){
-		WebUI.click(findTestObject('login_pop_up/link_register'))
-	}
-
-
 	@Then("I verify register page appears")
 	def i_verify_register_page_appears(){
+		WebUI.waitForElementPresent(findTestObject('Object Repository/register/input_Nama Depan_first_name'), 15)
 		String url=WebUI.getUrl();
 		WebUI.verifyMatch(url, "https://qa.fabelio.com/register", false)
 	}
@@ -101,12 +86,5 @@ class register {
 	@And ("I click register button in register page")
 	def  i_click_register_button_in_register_page(){
 		WebUI.click(findTestObject('Object Repository/register/button_buat_akun'))
-	}
-
-	@Then("I verify the web is redirected to dashboard saya page")
-	def i_verify_the_web_is_redirected_to_dashboard_saya_page(){
-		WebUI.waitForElementClickable(findTestObject('homepage/icon_login'), 15)
-		WebUI.click(findTestObject('homepage/icon_login'))
-		WebUI.verifyElementPresent(findTestObject("Object Repository/homepage/user_menu_after_login"), 15)
 	}
 }

@@ -43,32 +43,23 @@ import cucumber.api.java.en.When
 
 
 
-class login {
-	
-	@Then("I verify login pop-up appears")
-	def i_verify_login_pop_up_appears(){
-		WebUI.verifyElementPresent(findTestObject('login_pop_up/login_pop_up'), 15)
-	}
-
-	@When("I click buat akun sekarang link")
-	def i_click_buat_akun_sekarang_link(){
-		WebUI.click(findTestObject('login_pop_up/link_register'))
+class homepage {
+	@When("I click  login icon")
+	def  i_click_login_icon(){
+		WebUI.click(findTestObject('Object Repository/homepage/icon_login'))
 	}
 	
-	@When ("I input (.*) in email field in login pop-up")
-	def i_input_email_field_in_login_pop_up(String email){
-		WebUI.waitForElementPresent(findTestObject("Object Repository/login_pop_up/input_Email_username"), 15)
-		WebUI.setText(findTestObject('Object Repository/login_pop_up/input_Email_username'), 'fifekawahid@gmail.com')
+	@Then("I verify I already registered")
+	def i_verify_the_web_is_redirected_to_dashboard_saya_page(){
+		WebUI.waitForElementClickable(findTestObject('homepage/icon_login'), 15)
+		WebUI.click(findTestObject('homepage/icon_login'))
+		WebUI.verifyElementPresent(findTestObject("Object Repository/homepage/user_menu_after_login"), 15)
 	}
-
-	@And("I input (.*) in password field in login pop-up")
-	def i_input_password_field_in_login_pop_up(String password){
-		WebUI.setText(findTestObject("Object Repository/login_pop_up/input_Kata sandi_password"),password)
+	
+	@And("I verify i have been logged in")
+	def i_verify_i_have_been_logged_in(){
+		WebUI.waitForElementClickable(findTestObject('homepage/icon_login'), 15)
+		WebUI.click(findTestObject('homepage/icon_login'))
+		WebUI.verifyElementPresent(findTestObject("Object Repository/homepage/user_menu_after_login"), 15)
 	}
-
-	@And("I click masuk button in login pop-up")
-	def i_click_masuk_button_in_login_pop_up(){
-		WebUI.click(findTestObject("Object Repository/login_pop_up/button_masuk"))
-	}
-
 }
