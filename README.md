@@ -1,4 +1,3 @@
-7. Create scenarios with Gherkin for qa.fabelio.com
 
 Stack : Katalon studio
 Gherkin File for Behaviour Driven Development
